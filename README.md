@@ -77,4 +77,10 @@ du client à d'autres serveurs RADIUS.
 
 ![radius](https://user-images.githubusercontent.com/83721477/165078509-7b656c0a-1402-4499-84f0-2ed21d5ec0cd.jpg)
 
+1. Un utilisateur envoie une requête au NAS afin d'autoriser une connexion à distance
+2. Le NAS achemine la demande au serveur RADIUS
+3. Le serveur RADIUS consulte la base de données d'identification afin de connaître le type de scénario d'identification demandé pour l'utilisateur. Soit le scénario actuel convient, soit une autre méthodes d'identification est demandée à l'utilisateur. Le serveur RADIUS retourne ainsi une des quatre réponses suivantes:
+* ACCEPT : l'identification a réussi
+* REJECT : l'identification a échoué
+* CHALLENGE : le serveur RADIUS souhaite des informations supplémentaires de la part de l'utilisateur et propose un « défi » (en anglais « challenge ») 
 

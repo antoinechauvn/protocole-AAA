@@ -33,11 +33,20 @@ droits sur certains fichiers. Bien sûr, cela peut aussi être des droits plus s
 moins importants, comme accéder au serveur mail ou autoriser le sujet à accéder à un secteur
 physique de l’entreprise.
 ```
-![VLAN-SPOOF1](https://user-images.githubusercontent.com/83721477/164458470-57e6dcd1-3349-401f-8920-e45d5fe31835.png)
-___
-![VLAN-SPOOF2](https://user-images.githubusercontent.com/83721477/164458527-9d8c040d-b28c-4a6e-8c12-21736ef88fa5.png)
-___
-![VLAN-SPOOF3](https://user-images.githubusercontent.com/83721477/163724759-5c1c153e-a023-4428-b726-2eab1405165d.png)
+
+## A (Accounting)
+```
+Maintenant on garde une trace de toutes les actions effectuées par l’utilisateur. On dit que les
+actions de l’utilisateur sont loguées. Un administrateur réseaux pourra ainsi, consulter les logs
+afin de vérifier les actions d’un utilisateur, ou bien retrouver l’auteur de telle ou telle action.
+
+La traçabilité est très importante pour assurer une bonne sécurité et une intervention rapide en
+cas de problèmes. Elle agit tout d’abord de manière préventive, les utilisateurs se sachant
+surveillés, ils font attention à leurs agissements. Ensuite, grâce à la traçabilité on peut détecter
+des actions suspectes voir interdites et mieux cibler la source d’un problème pour intervenir,
+ou corriger celui-ci. Enfin, elle permet d’avoir une trace légale des actions effectuées sur
+le système d’information de l’entreprise.
+```
 
 1. On commence par envoyer des trames DTP
 2. Si le mode DTP est en DYNAMIC AUTO ou DYNAMIC DESIRABLE alors l'attaque est possible

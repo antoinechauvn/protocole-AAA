@@ -17,6 +17,22 @@ L’authentification désigne le fait de prouver qu’on est bien la personne qu
 L’authentification vient en complément de l’identification. Pour s’authentifier, on ajoute une
 preuve à l’identification. Ce sont ces preuves qu’on appelle facteurs d’authentification.
 ```
+
+## A (Autorisation)
+```
+Elle agit une fois que l’utilisateur s’est authentifié. C’est dans cette phase qu’on donne ou
+non accès à la ressource demandée, en fonction de la politique de contrôle d’accès.
+Peu importe la politique utilisée, elle reste basée sur trois principes :
+
+Classification des informations : Chaque information nécessite un certain niveau d’accès pour les consulter.
+Niveau d’accès des utilisateurs : Détermine le niveau d’accès de chaque utilisateur.
+Permissions de l’utilisateur : Détermine quels droits l’utilisateur aura sur les fichiers, lecture, écriture, lecture et écriture.
+
+Grâce à ses trois principes, une fois l’utilisateur authentifié il lui sera attribué certains
+droits sur certains fichiers. Bien sûr, cela peut aussi être des droits plus simples, mais pas
+moins importants, comme accéder au serveur mail ou autoriser le sujet à accéder à un secteur
+physique de l’entreprise.
+```
 ![VLAN-SPOOF1](https://user-images.githubusercontent.com/83721477/164458470-57e6dcd1-3349-401f-8920-e45d5fe31835.png)
 ___
 ![VLAN-SPOOF2](https://user-images.githubusercontent.com/83721477/164458527-9d8c040d-b28c-4a6e-8c12-21736ef88fa5.png)

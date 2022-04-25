@@ -131,7 +131,7 @@ d’accès pour les équipements réseau grâce à un équipement (serveur) qui 
 des informations liées à l’authentification des clients.
 ```
 
-La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ ne se passe pas exactement de la même manière que pour le protocole RADIUS.
+La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ ne se passe pas exactement de la même manière que pour le protocole RADIUS.<br>
 
 ![image](https://user-images.githubusercontent.com/83721477/165100603-a3ccf9ee-71f7-48c8-b5d6-df9ad74750b1.png)
 * Lorsque l’utilisateur cherche à se connecter au routeur, celui-ci va interroger le serveur TACACS+ pour savoir quelle action réaliser.

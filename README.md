@@ -74,6 +74,15 @@ grâce à un secret partagé.
 Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes
 du client à d'autres serveurs RADIUS.
 ```
+#### Serveur NAS (Network Access Server)
+```
+Le serveur d'accès au réseau (NAS) agit comme une passerelle entre l'utilisateur
+et le réseau plus large. Lorsqu'un utilisateur essaie d'obtenir un accès au réseau, le NAS transmet les
+informations d'authentification (par exemple, le nom d'utilisateur et le mot de passe) entre
+l'utilisateur et le serveur RADIUS. Ce processus est appelé session d'authentification.
+Notez que la connexion de l'utilisateur lance cette conversation de session d'authentification.
+```
+
 
 ![radius](https://user-images.githubusercontent.com/83721477/165078509-7b656c0a-1402-4499-84f0-2ed21d5ec0cd.jpg)
 

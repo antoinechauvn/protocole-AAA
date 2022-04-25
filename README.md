@@ -73,6 +73,22 @@ Ce type d’authentification est particulièrement utilisé pour les réseaux de
 2. Le routeur invite le client à saisir ses identifiants sous la forme d’un nom d’utilisateur et du mot de passe associé.<br>L’utilisateur saisit ensuite ces informations avant de valider.
 3. Le routeur va interroger le serveur d’authentification en lui envoyant le couple identifiant - mot de passe saisi par le client.<br>Ce serveur va ensuite répondre en routeur, en validant ou en invalidant l’authentification.<br>Une fois la réponse reçue, le routeur décide de l’action à mener avec le client.
 
+## Les Autorisations AAA
+Les autorisations AAA sont implémentées en cas d’utilisation du AAA avec serveur distant.
+<br>
+Les autorisations permettent d’autoriser un utilisateur à accéder uniquement à certaines commandes, après une authentification réussie.
+<br>
+Elles peuvent être configurées de deux manières :
+* En mode "caractère" : chaque commande est vérifiée.
+* En mode "réseau" : chaque connexion est vérifiée.
+
+En effet, une fois le client authentifié, une session est établie entre le routeur et le serveur AAA. Par la suite, à chaque fois que le client va effectuer une commande, le routeur va demander au serveur si ce client a le droit ou non d’exécuter les commandes.
+
+## Accounting AAA
+La gestion de compte AAA est implémentée lorsqu’on utilise AAA avec un serveur distant.<br>
+Cette fonctionnalité permet de conserver une trace de toutes les actions effectuées par les utilisateurs (action de logging).
+1. une fois un client authentifié, une session est établie avec un serveur AAA, et le routeur démarre le processus de log.
+2. lorsque le client se déconnecte, un message de déconnexion est envoyé au serveur AAA, et le processus de log s’arrête alors.
 
 # Liste de protocoles AAA
 ## RADIUS

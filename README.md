@@ -72,40 +72,32 @@ Ce type d’authentification est particulièrement utilisé pour les réseaux de
 1. Le client établit une connexion avec le routeur grâce aux protocoles telnet, SSH ou via le port console ou le port de management.
 2. Le routeur invite le client à saisir ses identifiants sous la forme d’un nom d’utilisateur et du mot de passe associé.<br>L’utilisateur saisit ensuite ces informations avant de valider.
 3. Le routeur va interroger le serveur d’authentification en lui envoyant le couple identifiant - mot de passe saisi par le client.<br>Ce serveur va ensuite répondre en routeur, en validant ou en invalidant l’authentification.<br>Une fois la réponse reçue, le routeur décide de l’action à mener avec le client.
-![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
+
 
 # Liste de protocoles AAA
 ## RADIUS
+```
+RADIUS signifie Remote Authentication Dial-In User Service. Il correspond à un protocole permettant de centraliser en son sein toutes les informations liées à l’authentification. Il a été développé en 1991 par la société Livingston (fabrication de serveurs), puis a été normalisé par l’IETF.
+Les RFC 2865 et 2866 définissent le protocole RADIUS comme permettant d’authentifier les utilisateurs distants grâce à une centralisation des données.
+Avant l’utilisation de RADIUS, nous devions dupliquer la création des comptes utilisateurs sur tous les équipements, ce qui peut devenir vite rébarbatif surtout lorsque l’on possède un grand nombre d’équipements.
+```
+![image](https://user-images.githubusercontent.com/83721477/165168828-f9aa6707-e9a7-4621-9e2d-ea2a7e3b27c5.png)
+* L’identification est assez simple. En effet, le poste utilisateur (appelé supplicant dans les RFC) va émettre une requête d’accès à un des clients RADIUS de notre infrastructure.
+* Ce sera le client RADIUS (ici le NAS - Network Attached Storage) qui va demander à l’utilisateur de saisir son couple identifiant / mot de passe. Le NAS va ensuite générer une requête appelée "Access-Request" qui va contenir les informations d’identification rentrées par l’utilisateur.
+* Le serveur RADIUS qui effectue l’identification finale (puisque certains serveurs RADIUS servent uniquement de "relais" au serveur final) peut demander des informations complémentaires grâce à un paquet "Access-Challenge" pour lequel le client répondra à nouveau par un "Access-Request".
+* Lorsque le serveur RADIUS dispose d’assez d’éléments, il valide ou rejette l’authentification en utilisant les paquets "Access-Accept" et "Access-Reject".
+* Pour authentifier les clients, le serveur RADIUS partage avec eux une clé secrète.
 
 ```
-Le protocole RADIUS (Remote Authentication Dial-In User Service), mis au point initialement
-par Livingston, est un protocole d'authentification standard, défini par un certain nombre de RFC.
-
-Le fonctionnement de RADIUS est basé sur un système client/serveur chargé de définir les accès
-d'utilisateurs distants à un réseau. Il s'agit du protocole de prédilection des fournisseurs d'accès à
-internet car il est relativement standard et propose des fonctionnalités de comptabilité permettant
-aux FAI de facturer précisément leurs clients.
-```
-
-### Fonctionnement
-```
-Le protocole RADIUS repose principalement sur un serveur (le serveur RADIUS), relié à une base
-d'identification (base de données, annuaire LDAP, etc.) et un client RADIUS, appelé NAS
-(Network Access Server), faisant office d'intermédiaire entre l'utilisateur final et le serveur.
-L'ensemble des transactions entre le client RADIUS et le serveur RADIUS est chiffrée et authentifiée
-grâce à un secret partagé.
-
-Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes
-du client à d'autres serveurs RADIUS.
-
 Le serveur RADIUS est généralement une application logicielle exécutée sur un système d'exploitation.
 Un seul serveur RADIUS peut recevoir et traiter de nombreuses demandes d'accès simultanément.
-Un serveur unique peut également interagir avec des fichiers plats, des bases de données SQL,
+Un serveur unique peut également interagir avec des fichiers, des bases de données SQL,
 des répertoires LDAP ou d'autres serveurs RADIUS.
 ```
-*Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
 
-<br>
+*Note: L'ensemble des transactions entre le client RADIUS et le serveur RADIUS est chiffrée et authentifiée grâce à un secret partagé*
+*Note: Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes du client à d'autres serveurs RADIUS.*
+*Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
 
 #### Serveur NAS (Network Access Server)
 
@@ -148,15 +140,4 @@ La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ 
 * De la même manière, le serveur TACACS+ demande au routeur d’effectuer la demande du mot de passe auprès du client.
 * Une fois les informations récupérées, le serveur décide de valider ou de rejeter la demande de connexion.
 
-
-| TACACS+ |	RADIUS |
-| --- | --- |
-| Cisco proprietary protocol | open standard protocol |
-| It uses TCP as a transmission protocol | It uses UDP as a transmission protocol |
-| It uses TCP port number 49.	| It uses UDP port number 1812 for authentication and authorization and 1813 for accounting. |
-| Authentication, Authorization, and Accounting are separated in TACACS+.	| Authentication and Authorization are combined in RADIUS. |
-| All the AAA packets are encrypted.	| Only the password is encrypted while the other information such as username, accounting information, etc are not encrypted. |
-| preferably used for ACS. | used when ISE is used |
-| It provides more granular control i.e can specify the particular command for authorization.	| No external authorization of commands is supported. |
-| TACACS+ offers multiprotocol support | No multiprotocol support. |
-| Used for device administration. |	used for network access |
+![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)

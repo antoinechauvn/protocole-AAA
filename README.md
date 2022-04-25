@@ -3,7 +3,7 @@ Découverte du protocole AAA et des protocoles liés au AAA (RADIUS, TACACS)
 
 
 ### Qu'est-ce que le protocole AAA?
-AAA correspond à un modèle de sécurité qui réalise trois fonctions :
+AAA correspond à un protocole qui réalise trois fonctions :
 * l'authentification
 * l'autorisation
 * la traçabilité

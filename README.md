@@ -57,10 +57,21 @@ Exemple: `login local` sur la méthode d'accès concernée.
 ## Les Authentifications AAA
 
 #### Authentification AAA autonome
-![image](https://user-images.githubusercontent.com/83721477/165165459-f5d20356-2ae8-4970-8341-d3c40590d4dc.png)
+![image](https://user-images.githubusercontent.com/83721477/165166144-b18389ed-a4e4-4df2-af7e-a470f564afac.png)
 
+L'authentification autonome se déroule en 3 temps:
+
+1. Le client établit une connexion avec le routeur grâce aux protocoles telnet, SSH ou via le port console et le port de management.
+2. Le routeur invite le client à saisir ses identifiants sous la forme d’un nom d’utilisateur et du mot de passe associé.<br>L’utilisateur saisit ensuite ces informations avant de valider.
+3. Enfin, le routeur va comparer les données rentrées par l’utilisateur avec sa base de données locale. Une fois les identifiants vérifiés, le routeur donne l’accès au client, sinon il rejette la connexion.
 
 #### Authentification AAA externe
+![image](https://user-images.githubusercontent.com/83721477/165167310-74b086a6-4bec-46ea-98dc-da62a1e9c779.png)
+
+Ce type d’authentification est particulièrement utilisé pour les réseaux de taille moyenne ou grande. En effet, l’équipement va aller chercher ses informations dans une base de données externe.
+1. Le client établit une connexion avec le routeur grâce aux protocoles telnet, SSH ou via le port console ou le port de management.
+2. Le routeur invite le client à saisir ses identifiants sous la forme d’un nom d’utilisateur et du mot de passe associé.<br>L’utilisateur saisit ensuite ces informations avant de valider.
+3. Le routeur va interroger le serveur d’authentification en lui envoyant le couple identifiant - mot de passe saisi par le client.<br>Ce serveur va ensuite répondre en routeur, en validant ou en invalidant l’authentification.<br>Une fois la réponse reçue, le routeur décide de l’action à mener avec le client.
 ![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
 
 # Liste de protocoles AAA

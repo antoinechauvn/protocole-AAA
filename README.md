@@ -122,3 +122,16 @@ La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ 
 * Ce nom d’utilisateur est transmis jusqu’au serveur TACACS+ qui va ensuite demander au routeur d’effectuer la demande du mot de passe.
 * De la même manière, le serveur TACACS+ demande au routeur d’effectuer la demande du mot de passe auprès du client.
 * Une fois les informations récupérées, le serveur décide de valider ou de rejeter la demande de connexion.
+
+
+| TACACS+ |	RADIUS |
+| --- | --- |
+| Cisco proprietary protocol | open standard protocol |
+| It uses TCP as a transmission protocol | It uses UDP as a transmission protocol |
+| It uses TCP port number 49.	| It uses UDP port number 1812 for authentication and authorization and 1813 for accounting. |
+| Authentication, Authorization, and Accounting are separated in TACACS+.	| Authentication and Authorization are combined in RADIUS. |
+| All the AAA packets are encrypted.	| Only the password is encrypted while the other information such as username, accounting information, etc are not encrypted. |
+| preferably used for ACS. | used when ISE is used |
+| It provides more granular control i.e can specify the particular command for authorization.	| No external authorization of commands is supported. |
+| TACACS+ offers multiprotocol support | No multiprotocol support. |
+| Used for device administration. |	used for network access |

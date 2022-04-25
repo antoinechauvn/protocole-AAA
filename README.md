@@ -95,8 +95,8 @@ Un serveur unique peut également interagir avec des fichiers, des bases de donn
 des répertoires LDAP ou d'autres serveurs RADIUS.
 ```
 
-*Note: L'ensemble des transactions entre le client RADIUS et le serveur RADIUS est chiffrée et authentifiée grâce à un secret partagé*
-*Note: Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes du client à d'autres serveurs RADIUS.*
+*Note: L'ensemble des transactions entre le client RADIUS et le serveur RADIUS est chiffrée et authentifiée grâce à un secret partagé*<br>
+*Note: Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes du client à d'autres serveurs RADIUS.*<br>
 *Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
 
 #### Serveur NAS (Network Access Server)

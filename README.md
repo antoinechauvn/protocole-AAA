@@ -91,6 +91,9 @@ Notez que la connexion de l'utilisateur lance cette conversation de session d'au
 3. Le serveur RADIUS consulte la base de données d'identification afin de connaître le type de scénario d'identification demandé pour l'utilisateur. Soit le scénario actuel convient, soit une autre méthodes d'identification est demandée à l'utilisateur. <br>
 Le serveur RADIUS retourne ainsi une des quatre réponses suivantes:
 * ACCEPT : l'identification a réussi
-* REJECT : l'identification a échoué
+* REJECT : l'identification a échou
 * CHALLENGE : le serveur RADIUS souhaite des informations supplémentaires de la part de l'utilisateur et propose un « défi » (en anglais « challenge ») 
+* CHANGE PASSWORD : le serveur RADIUS demande à l'utilisateur un nouveau mot de passe. Change-password est un attribut VSA (Vendor-Specific Attributes) , c'est-à-dire qu'il est spécifique à un fournisseur, et dans ce cas, c'est un attribut de Microsoft et pour être plus précis, celui de MS-Chap v2. Il n'appartient pas aux attributs radius standard définis dans la RFC 2865.
+
+4. Suite à cette phase dit d'authentification, débute une phase d'autorisation où le serveur retourne les autorisations de l'utilisateur.
 

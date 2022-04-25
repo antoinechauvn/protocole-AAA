@@ -53,3 +53,25 @@ le système d’information de l’entreprise.
 # Liste de protocoles AAA
 ## RADIUS
 
+```
+Le protocole RADIUS (Remote Authentication Dial-In User Service), mis au point initialement
+par Livingston, est un protocole d'authentification standard, défini par un certain nombre de RFC.
+
+Le fonctionnement de RADIUS est basé sur un système client/serveur chargé de définir les accès
+d'utilisateurs distants à un réseau. Il s'agit du protocole de prédilection des fournisseurs d'accès à
+internet car il est relativement standard et propose des fonctionnalités de comptabilité permettant
+aux FAI de facturer précisément leurs clients.
+```
+
+### Fonctionnement
+```
+Le protocole RADIUS repose principalement sur un serveur (le serveur RADIUS), relié à une base
+d'identification (base de données, annuaire LDAP, etc.) et un client RADIUS, appelé NAS
+(Network Access Server), faisant office d'intermédiaire entre l'utilisateur final et le serveur.
+L'ensemble des transactions entre le client RADIUS et le serveur RADIUS est chiffrée et authentifiée
+grâce à un secret partagé.
+
+Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes
+du client à d'autres serveurs RADIUS.
+```
+

@@ -93,9 +93,13 @@ Cette fonctionnalité permet de conserver une trace de toutes les actions effect
 # Liste de protocoles AAA
 ## RADIUS
 ```
-RADIUS signifie Remote Authentication Dial-In User Service. Il correspond à un protocole permettant de centraliser en son sein toutes les informations liées à l’authentification. Il a été développé en 1991 par la société Livingston (fabrication de serveurs), puis a été normalisé par l’IETF.
-Les RFC 2865 et 2866 définissent le protocole RADIUS comme permettant d’authentifier les utilisateurs distants grâce à une centralisation des données.
-Avant l’utilisation de RADIUS, nous devions dupliquer la création des comptes utilisateurs sur tous les équipements, ce qui peut devenir vite rébarbatif surtout lorsque l’on possède un grand nombre d’équipements.
+RADIUS signifie Remote Authentication Dial-In User Service. Il correspond à un protocole permettant
+de centraliser en son sein toutes les informations liées à l’authentification. Il a été développé
+en 1991 par la société Livingston (fabrication de serveurs), puis a été normalisé par l’IETF.
+Les RFC 2865 et 2866 définissent le protocole RADIUS comme permettant d’authentifier les utilisateurs
+distants grâce à une centralisation des données. Avant l’utilisation de RADIUS, nous devions dupliquer
+la création des comptes utilisateurs sur tous les équipements, ce qui peut devenir vite rébarbatif
+surtout lorsque l’on possède un grand nombre d’équipements.
 ```
 ![image](https://user-images.githubusercontent.com/83721477/165169817-3a05ec19-3eff-4184-b742-26a950679580.png)
 

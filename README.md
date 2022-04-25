@@ -48,6 +48,8 @@ ou corriger celui-ci. Enfin, elle permet d’avoir une trace légale des actions
 le système d’information de l’entreprise.
 ```
 
+![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
+
 # Liste de protocoles AAA
 ## RADIUS
 

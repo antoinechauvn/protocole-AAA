@@ -57,6 +57,7 @@ Exemple: `login local` sur la méthode d'accès concernée.
 ## Les Authentifications AAA
 
 #### Authentification AAA autonome
+![image](https://user-images.githubusercontent.com/83721477/165165459-f5d20356-2ae8-4970-8341-d3c40590d4dc.png)
 
 
 #### Authentification AAA externe
@@ -96,6 +97,7 @@ des répertoires LDAP ou d'autres serveurs RADIUS.
 <br>
 
 #### Serveur NAS (Network Access Server)
+
 ```
 Le serveur d'accès au réseau (NAS) agit comme une passerelle entre l'utilisateur
 et le réseau plus large. Lorsqu'un utilisateur essaie d'obtenir un accès au réseau, le NAS transmet les

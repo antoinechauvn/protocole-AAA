@@ -74,6 +74,8 @@ grâce à un secret partagé.
 Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes
 du client à d'autres serveurs RADIUS.
 ```
+*Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
+
 #### Serveur NAS (Network Access Server)
 ```
 Le serveur d'accès au réseau (NAS) agit comme une passerelle entre l'utilisateur

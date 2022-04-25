@@ -106,3 +106,8 @@ Le serveur RADIUS retourne ainsi une des quatre réponses suivantes:
 
 4. Suite à cette phase dit d'authentification, débute une phase d'autorisation où le serveur retourne les autorisations de l'utilisateur.
 
+## TACACS et TACACS+
+
+TACACS est un protocole d'authentification plus ancien, commun aux réseaux d’Unix qui permet à un serveur d'accès à distance d'expédier le mot de passe de la procédure de connexion d'un utilisateur à un serveur d'authentification pour déterminer si on peut permettre l'accès à un système donné. TACACS est un protocole non codé et donc moins sécurisé que les protocoles postérieurs de TACACS et de RADIUS.
+Une version postérieure de TACACS est TACACS+ (TACACS étendu). Malgré son nom, TACACS+ est un protocole entièrement nouveau. TACACS et RADIUS ont généralement remplacé les protocoles précédents dans les réseaux plus récemment établis.
+TACACS utilise TCP. Quelques administrateurs recommandent d'utiliser TACACS parce que TCP est vu comme un protocole plus fiable. De plus, alors que RADIUS combine l'authentification et l'autorisation dans un profil d'utilisateur, TACACS quant à lui sépare les deux. TACACS et TACACS+ fonctionnent toujours sur beaucoup de systèmes anciens.

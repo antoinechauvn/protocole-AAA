@@ -33,6 +33,13 @@ Le mot de passe sera stocké en clair dans le fichier de configuration.
 Par la suite il faudra spécifier à l'équipement d'utiliser la base locale <br>
 Pour cela: `login local` sur la méthode d'accès concernée.
 
+### Les Authentifications AAA
+
+#### Authentification AAA autonome
+
+
+### Authentification AAA externe
+
 ## A (Autorisation)
 ```
 Elle agit une fois que l’utilisateur s’est authentifié. C’est dans cette phase qu’on donne ou

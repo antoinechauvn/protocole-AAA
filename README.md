@@ -10,7 +10,7 @@ AAA correspond à un protocole qui réalise trois fonctions :
 
 L’architecture AAA permet aux utilisateurs d’accéder aux périphériques en réseau qui leur ont été attribués et protège le réseau contre les accès non autorisés
 
-## A (Authentication)
+## A (Authentification)
 
 ```
 L’authentification désigne le fait de prouver qu’on est bien la personne que l’on prétend être.

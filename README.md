@@ -81,6 +81,8 @@ des répertoires LDAP ou d'autres serveurs RADIUS.
 ```
 *Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
 
+<br>
+
 #### Serveur NAS (Network Access Server)
 ```
 Le serveur d'accès au réseau (NAS) agit comme une passerelle entre l'utilisateur

@@ -111,3 +111,14 @@ Le serveur RADIUS retourne ainsi une des quatre réponses suivantes:
 TACACS est un protocole d'authentification plus ancien, commun aux réseaux d’Unix qui permet à un serveur d'accès à distance d'expédier le mot de passe de la procédure de connexion d'un utilisateur à un serveur d'authentification pour déterminer si on peut permettre l'accès à un système donné. TACACS est un protocole non codé et donc moins sécurisé que les protocoles postérieurs de TACACS et de RADIUS.
 Une version postérieure de TACACS est TACACS+ (TACACS étendu). Malgré son nom, TACACS+ est un protocole entièrement nouveau. TACACS et RADIUS ont généralement remplacé les protocoles précédents dans les réseaux plus récemment établis.
 TACACS utilise TCP. Quelques administrateurs recommandent d'utiliser TACACS parce que TCP est vu comme un protocole plus fiable. De plus, alors que RADIUS combine l'authentification et l'autorisation dans un profil d'utilisateur, TACACS quant à lui sépare les deux. TACACS et TACACS+ fonctionnent toujours sur beaucoup de systèmes anciens.
+
+TACACS+ signifie Terminal Access Controller Access-Control System Plus et permet d’effectuer un contrôle d’accès pour les équipements réseau grâce à un équipement (serveur) qui centralise l’ensemble des informations liées à l’authentification des clients.
+
+La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ ne se passe pas exactement de la même manière que pour le protocole RADIUS.
+![image](https://user-images.githubusercontent.com/83721477/165100603-a3ccf9ee-71f7-48c8-b5d6-df9ad74750b1.png)
+* Lorsque l’utilisateur cherche à se connecter au routeur, celui-ci va interroger le serveur TACACS+ pour savoir quelle action réaliser.
+* Le serveur TACACS+ répond qu’il faut demander le nom d’utilisateur.
+* Le routeur demande ensuite le nom d’utilisateur au client.
+* Ce nom d’utilisateur est transmis jusqu’au serveur TACACS+ qui va ensuite demander au routeur d’effectuer la demande du mot de passe.
+* De la même manière, le serveur TACACS+ demande au routeur d’effectuer la demande du mot de passe auprès du client.
+* Une fois les informations récupérées, le serveur décide de valider ou de rejeter la demande de connexion.

@@ -81,7 +81,8 @@ RADIUS signifie Remote Authentication Dial-In User Service. Il correspond à un 
 Les RFC 2865 et 2866 définissent le protocole RADIUS comme permettant d’authentifier les utilisateurs distants grâce à une centralisation des données.
 Avant l’utilisation de RADIUS, nous devions dupliquer la création des comptes utilisateurs sur tous les équipements, ce qui peut devenir vite rébarbatif surtout lorsque l’on possède un grand nombre d’équipements.
 ```
-![image](https://user-images.githubusercontent.com/83721477/165168828-f9aa6707-e9a7-4621-9e2d-ea2a7e3b27c5.png)
+![image](https://user-images.githubusercontent.com/83721477/165169817-3a05ec19-3eff-4184-b742-26a950679580.png)
+
 * L’identification est assez simple. En effet, le poste utilisateur (appelé supplicant dans les RFC) va émettre une requête d’accès à un des clients RADIUS de notre infrastructure.
 * Ce sera le client RADIUS (ici le NAS - Network Attached Storage) qui va demander à l’utilisateur de saisir son couple identifiant / mot de passe. Le NAS va ensuite générer une requête appelée "Access-Request" qui va contenir les informations d’identification rentrées par l’utilisateur.
 * Le serveur RADIUS qui effectue l’identification finale (puisque certains serveurs RADIUS servent uniquement de "relais" au serveur final) peut demander des informations complémentaires grâce à un paquet "Access-Challenge" pour lequel le client répondra à nouveau par un "Access-Request".

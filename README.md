@@ -5,55 +5,23 @@ Découverte du protocole AAA et des protocoles liés au AAA (RADIUS, TACACS)
 ### Qu'est-ce que le protocole AAA?
 AAA est un protocole de sécurisation des équipements dont les trois lettres signifient : Authentication, Authorization et Accounting.
 
-* L’Authentication (authentification en français) fait référence à la capacité que l’équipement aura de vérifier l’identité de l’utilisateur. C’est un processus qui va décider si un utilisateur donné peut accéder au réseau ou à l’équipement sur lequel AAA est configuré.
-* L’Authorization (autorisation en français) fait quant à lui référence aux ressources auxquelles l’utilisateur va pouvoir accéder, et les opérations qu’il va être en mesure d’effectuer.
-* L’Accounting (gestion des comptes) concerne les données et les informations se rapportant au profil de l’utilisateur.
+* L’Authentication
+* L’Authorization (autorisation)
+* L’Accounting (gestion des comptes)
 
 ## A (Authentification)
 
 ```
-L’authentification désigne le fait de prouver qu’on est bien la personne que l’on prétend être.
-L’authentification vient en complément de l’identification. Pour s’authentifier, on ajoute une
-preuve à l’identification. Ce sont ces preuves qu’on appelle facteurs d’authentification.
+L’authentification consiste à vérifier qu’une personne/équipement est bien celle qu’elle prétend être.
+Ceci est généralement réalisé en utilisant un secret partagé entre l’utilisateur et le serveur ou à
+l’aide de certificats (e.g X.509).
 ```
-
-### Les différents types d’authentification
-#### Authentification de type "password-only"
-L’administrateur a, à sa disposition, plusieurs types d’authentification disponibles. La première, et la plus simple, consiste en une authentification par mot de passe, également appelée Authentication "password-only".
-<br>
-Cette méthode oblige l’utilisateur à saisir un mot de passe lorsqu’il se connecte via une des "access line" comme les vty, ou le port console
-<br>
-Pour l'implémenter: `enable password cisco`
-
-#### Authentification sur la base locale des utilisateurs
-On stocke la base de données des utilisateurs en local sur l'équipement concerné <br>
-Pour faire cela en mode conf: `username {name} password {password}`
-Le mot de passe sera stocké en clair dans le fichier de configuration.
-
-Par la suite il faudra spécifier à l'équipement d'utiliser la base locale <br>
-Pour cela: `login local` sur la méthode d'accès concernée.
-
-### Les Authentifications AAA
-
-#### Authentification AAA autonome
-
-
-### Authentification AAA externe
 
 ## A (Autorisation)
 ```
-Elle agit une fois que l’utilisateur s’est authentifié. C’est dans cette phase qu’on donne ou
-non accès à la ressource demandée, en fonction de la politique de contrôle d’accès.
-Peu importe la politique utilisée, elle reste basée sur trois principes :
-
-Classification des informations : Chaque information nécessite un certain niveau d’accès pour les consulter.
-Niveau d’accès des utilisateurs : Détermine le niveau d’accès de chaque utilisateur.
-Permissions de l’utilisateur : Détermine quels droits l’utilisateur aura sur les fichiers, lecture, écriture, lecture et écriture.
-
-Grâce à ses trois principes, une fois l’utilisateur authentifié il lui sera attribué certains
-droits sur certains fichiers. Bien sûr, cela peut aussi être des droits plus simples, mais pas
-moins importants, comme accéder au serveur mail ou autoriser le sujet à accéder à un secteur
-physique de l’entreprise.
+L’autorisation consiste à permettre l’accès à certains services ou ressources.
+Un utilisateur peut par exemple demander à avoir une certaine bande passante.
+Le serveur AAA lui autorisera ou non cette demande
 ```
 
 ## A (Accounting)
@@ -61,15 +29,37 @@ physique de l’entreprise.
 Maintenant on garde une trace de toutes les actions effectuées par l’utilisateur. On dit que les
 actions de l’utilisateur sont loguées. Un administrateur réseaux pourra ainsi, consulter les logs
 afin de vérifier les actions d’un utilisateur, ou bien retrouver l’auteur de telle ou telle action.
-
-La traçabilité est très importante pour assurer une bonne sécurité et une intervention rapide en
-cas de problèmes. Elle agit tout d’abord de manière préventive, les utilisateurs se sachant
-surveillés, ils font attention à leurs agissements. Ensuite, grâce à la traçabilité on peut détecter
-des actions suspectes voir interdites et mieux cibler la source d’un problème pour intervenir,
-ou corriger celui-ci. Enfin, elle permet d’avoir une trace légale des actions effectuées sur
-le système d’information de l’entreprise.
 ```
 
+## Les différents types d’authentification locale
+### Authentification de type "password-only"
+L’administrateur a, à sa disposition, plusieurs types d’authentification disponibles. La première, et la plus simple, consiste en une authentification par mot de passe, également appelée Authentication "password-only".
+<br>
+Cette méthode oblige l’utilisateur à saisir un mot de passe lorsqu’il se connecte via une des "access line" comme les vty, ou le port console
+<br>
+<br>
+Exemple: `enable password cisco`
+
+### Authentification sur la base locale des utilisateurs
+On stocke la base de données des utilisateurs en local sur l'équipement concerné
+<br>
+<br>
+`username {name} password {password}`
+<br>
+<br>
+Le mot de passe sera stocké en clair dans le fichier de configuration.
+<br>
+Par la suite il faudra spécifier à l'équipement d'utiliser la base locale
+<br>
+<br>
+Exemple: `login local` sur la méthode d'accès concernée.
+
+## Les Authentifications AAA
+
+#### Authentification AAA autonome
+
+
+#### Authentification AAA externe
 ![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
 
 # Liste de protocoles AAA

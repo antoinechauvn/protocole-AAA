@@ -25,7 +25,13 @@ Cette méthode oblige l’utilisateur à saisir un mot de passe lorsqu’il se c
 <br>
 Pour l'implémenter: `enable password cisco`
 
-```
+#### Authentification sur la base locale des utilisateurs
+On stocke la base de données des utilisateurs en local sur l'équipement concerné <br>
+Pour faire cela en mode conf: `username {name} password {password}`
+Le mot de passe sera stocké en clair dans le fichier de configuration.
+
+Par la suite il faudra spécifier à l'équipement d'utiliser la base locale <br>
+Pour cela: `login local` sur la méthode d'accès concernée.
 
 ## A (Autorisation)
 ```

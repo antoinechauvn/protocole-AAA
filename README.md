@@ -85,8 +85,8 @@ Avant l’utilisation de RADIUS, nous devions dupliquer la création des comptes
 
 * L’identification est assez simple. En effet, le poste utilisateur (appelé supplicant dans les RFC) va émettre une requête d’accès à un des clients RADIUS de notre infrastructure.
 * Ce sera le client RADIUS (ici le NAS - Network Attached Storage) qui va demander à l’utilisateur de saisir son couple identifiant / mot de passe. Le NAS va ensuite générer une requête appelée "Access-Request" qui va contenir les informations d’identification rentrées par l’utilisateur.
-* Le serveur RADIUS qui effectue l’identification finale (puisque certains serveurs RADIUS servent uniquement de "relais" au serveur final) peut demander des informations complémentaires grâce à un paquet "Access-Challenge" pour lequel le client répondra à nouveau par un "Access-Request".
-* Lorsque le serveur RADIUS dispose d’assez d’éléments, il valide ou rejette l’authentification en utilisant les paquets "Access-Accept" et "Access-Reject".
+* Le serveur RADIUS qui effectue l’identification finale (puisque certains serveurs RADIUS servent uniquement de "relais" au serveur final) peut demander des informations complémentaires grâce à un paquet `Access-Challenge` pour lequel le client répondra à nouveau par un `Access-Request`.
+* Lorsque le serveur RADIUS dispose d’assez d’éléments, il valide ou rejette l’authentification en utilisant les paquets `Access-Accept` et `Access-Reject`.
 * Pour authentifier les clients, le serveur RADIUS partage avec eux une clé secrète.
 
 ```

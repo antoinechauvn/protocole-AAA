@@ -141,11 +141,11 @@ La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ 
 * De la même manière, le serveur TACACS+ demande au routeur d’effectuer la demande du mot de passe auprès du client.
 * Une fois les informations récupérées, le serveur décide de valider ou de rejeter la demande de connexion.
 
-![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
-
 # Éléments importants à retenir pour la certification
 De nombreuses questions à l’examen CCNA sont souvent fondées sur les particularités de TACACS+.
 * Parmi les notions les plus importantes, nous retiendrons que TACACS+ fonctionne en séparant en trois processus, l’authentification, les autorisations et la gestion de compte (contrairement à RADIUS qui combine l’authentification et les autorisations, mais sépare la gestion de compte).
 * Il s’agit d’un protocole propriétaire Cisco fonctionnant sur le port TCP 49.
 * Contrairement à RADIUS, pour TACACS+ l’ensemble des échanges est chiffré, et utilise la méthode d’authentification CHAP (on peut également utiliser du PAP).
 * Enfin, il est tout à fait possible d’associer des commandes spécifiques pour chaque groupe d’utilisateurs authentifiés, contrairement à RADIUS.
+
+![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)

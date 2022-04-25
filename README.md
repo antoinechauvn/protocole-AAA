@@ -75,3 +75,6 @@ Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire 
 du client à d'autres serveurs RADIUS.
 ```
 
+![image](https://user-images.githubusercontent.com/83721477/165078313-bd315b2c-1479-4544-82ac-858898d2ac51.png)
+
+

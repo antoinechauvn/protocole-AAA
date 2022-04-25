@@ -73,6 +73,11 @@ grâce à un secret partagé.
 
 Il est à noter que le serveur RADIUS peut faire office de proxy, c'est-à-dire transmettre les requêtes
 du client à d'autres serveurs RADIUS.
+
+Le serveur RADIUS est généralement une application logicielle exécutée sur un système d'exploitation.
+Un seul serveur RADIUS peut recevoir et traiter de nombreuses demandes d'accès simultanément.
+Un serveur unique peut également interagir avec des fichiers plats, des bases de données SQL,
+des répertoires LDAP ou d'autres serveurs RADIUS.
 ```
 *Note: Tout équipement peux être un client RADIUS du moment que l'on renseigne l'adresse IP*
 

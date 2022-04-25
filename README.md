@@ -100,7 +100,7 @@ Avant l’utilisation de RADIUS, nous devions dupliquer la création des comptes
 ![image](https://user-images.githubusercontent.com/83721477/165169817-3a05ec19-3eff-4184-b742-26a950679580.png)
 
 * L’identification est assez simple. En effet, le poste utilisateur (appelé supplicant dans les RFC) va émettre une requête d’accès à un des clients RADIUS de notre infrastructure.
-* Ce sera le client RADIUS (ici le NAS - Network Attached Storage) qui va demander à l’utilisateur de saisir son couple identifiant / mot de passe. Le NAS va ensuite générer une requête appelée "Access-Request" qui va contenir les informations d’identification rentrées par l’utilisateur.
+* Ce sera le client RADIUS (ici le NAS - Network Attached Storage) qui va demander à l’utilisateur de saisir son couple identifiant / mot de passe. Le NAS va ensuite générer une requête appelée `Access-Request` qui va contenir les informations d’identification rentrées par l’utilisateur.
 * Le serveur RADIUS qui effectue l’identification finale (puisque certains serveurs RADIUS servent uniquement de "relais" au serveur final) peut demander des informations complémentaires grâce à un paquet `Access-Challenge` pour lequel le client répondra à nouveau par un `Access-Request`.
 * Lorsque le serveur RADIUS dispose d’assez d’éléments, il valide ou rejette l’authentification en utilisant les paquets `Access-Accept` et `Access-Reject`.
 * Pour authentifier les clients, le serveur RADIUS partage avec eux une clé secrète.
@@ -119,34 +119,15 @@ des répertoires LDAP ou d'autres serveurs RADIUS.
 #### Serveur NAS (Network Access Server)
 
 ```
-Le serveur d'accès au réseau (NAS) agit comme une passerelle entre l'utilisateur
-et le réseau plus large. Lorsqu'un utilisateur essaie d'obtenir un accès au réseau, le NAS transmet les
-informations d'authentification (par exemple, le nom d'utilisateur et le mot de passe) entre
-l'utilisateur et le serveur RADIUS. Ce processus est appelé session d'authentification.
-Notez que la connexion de l'utilisateur lance cette conversation de session d'authentification.
 ```
-
 
 ![radius](https://user-images.githubusercontent.com/83721477/165078509-7b656c0a-1402-4499-84f0-2ed21d5ec0cd.jpg)
 
-1. Un utilisateur envoie une requête au NAS afin d'autoriser une connexion à distance
-2. Le NAS achemine la demande au serveur RADIUS
-3. Le serveur RADIUS consulte la base de données d'identification afin de connaître le type de scénario d'identification demandé pour l'utilisateur. Soit le scénario actuel convient, soit une autre méthodes d'identification est demandée à l'utilisateur. <br>
-Le serveur RADIUS retourne ainsi une des quatre réponses suivantes:
-* ACCEPT : l'identification a réussi
-* REJECT : l'identification a échou
-* CHALLENGE : le serveur RADIUS souhaite des informations supplémentaires de la part de l'utilisateur et propose un « défi » (en anglais « challenge ») 
-* CHANGE PASSWORD : le serveur RADIUS demande à l'utilisateur un nouveau mot de passe. Change-password est un attribut VSA (Vendor-Specific Attributes) , c'est-à-dire qu'il est spécifique à un fournisseur, et dans ce cas, c'est un attribut de Microsoft et pour être plus précis, celui de MS-Chap v2. Il n'appartient pas aux attributs radius standard définis dans la RFC 2865.
 
-4. Suite à cette phase dit d'authentification, débute une phase d'autorisation où le serveur retourne les autorisations de l'utilisateur.
-
-## TACACS et TACACS+
-
-TACACS est un protocole d'authentification plus ancien, commun aux réseaux d’Unix qui permet à un serveur d'accès à distance d'expédier le mot de passe de la procédure de connexion d'un utilisateur à un serveur d'authentification pour déterminer si on peut permettre l'accès à un système donné. TACACS est un protocole non codé et donc moins sécurisé que les protocoles postérieurs de TACACS et de RADIUS.
-Une version postérieure de TACACS est TACACS+ (TACACS étendu). Malgré son nom, TACACS+ est un protocole entièrement nouveau. TACACS et RADIUS ont généralement remplacé les protocoles précédents dans les réseaux plus récemment établis.
-TACACS utilise TCP. Quelques administrateurs recommandent d'utiliser TACACS parce que TCP est vu comme un protocole plus fiable. De plus, alors que RADIUS combine l'authentification et l'autorisation dans un profil d'utilisateur, TACACS quant à lui sépare les deux. TACACS et TACACS+ fonctionnent toujours sur beaucoup de systèmes anciens.
-
+## TACACS+
+```
 TACACS+ signifie Terminal Access Controller Access-Control System Plus et permet d’effectuer un contrôle d’accès pour les équipements réseau grâce à un équipement (serveur) qui centralise l’ensemble des informations liées à l’authentification des clients.
+```
 
 La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ ne se passe pas exactement de la même manière que pour le protocole RADIUS.
 ![image](https://user-images.githubusercontent.com/83721477/165100603-a3ccf9ee-71f7-48c8-b5d6-df9ad74750b1.png)
@@ -158,3 +139,10 @@ La communication entre le "supplicant", le client TACACS+ et le serveur TACACS+ 
 * Une fois les informations récupérées, le serveur décide de valider ou de rejeter la demande de connexion.
 
 ![image](https://user-images.githubusercontent.com/83721477/165077387-439f3e5a-ca7d-4fdf-816f-e23f73e4faca.png)
+
+# Éléments importants à retenir pour la certification
+De nombreuses questions à l’examen CCNA sont souvent fondées sur les particularités de TACACS+.
+* Parmi les notions les plus importantes, nous retiendrons que TACACS+ fonctionne en séparant en trois processus, l’authentification, les autorisations et la gestion de compte (contrairement à RADIUS qui combine l’authentification et les autorisations, mais sépare la gestion de compte).
+* Il s’agit d’un protocole propriétaire Cisco fonctionnant sur le port TCP 49.
+* Contrairement à RADIUS, pour TACACS+ l’ensemble des échanges est chiffré, et utilise la méthode d’authentification CHAP (on peut également utiliser du PAP).
+* Enfin, il est tout à fait possible d’associer des commandes spécifiques pour chaque groupe d’utilisateurs authentifiés, contrairement à RADIUS.

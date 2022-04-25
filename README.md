@@ -19,8 +19,10 @@ preuve à l’identification. Ce sont ces preuves qu’on appelle facteurs d’a
 
 ### Les différents types d’authentification
 #### Authentification de type "password-only"
-L’administrateur a, à sa disposition, plusieurs types d’authentification disponibles. La première, et la plus simple, consiste en une authentification par mot de passe, également appelée Authentication "password-only". <br>
+L’administrateur a, à sa disposition, plusieurs types d’authentification disponibles. La première, et la plus simple, consiste en une authentification par mot de passe, également appelée Authentication "password-only".
+<br>
 Cette méthode oblige l’utilisateur à saisir un mot de passe lorsqu’il se connecte via une des "access line" comme les vty, ou le port console
+<br>
 Pour l'implémenter: `enable password cisco`
 
 ```

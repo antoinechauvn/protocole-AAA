@@ -3,12 +3,11 @@ Découverte du protocole AAA et des protocoles liés au AAA (RADIUS, TACACS)
 
 
 ### Qu'est-ce que le protocole AAA?
-AAA correspond à un protocole qui réalise trois fonctions :
-* l'authentification
-* l'autorisation
-* la traçabilité
+AAA est un protocole de sécurisation des équipements dont les trois lettres signifient : Authentication, Authorization et Accounting.
 
-L’architecture AAA permet aux utilisateurs d’accéder aux périphériques en réseau qui leur ont été attribués et protège le réseau contre les accès non autorisés
+* L’Authentication (authentification en français) fait référence à la capacité que l’équipement aura de vérifier l’identité de l’utilisateur. C’est un processus qui va décider si un utilisateur donné peut accéder au réseau ou à l’équipement sur lequel AAA est configuré.
+* L’Authorization (autorisation en français) fait quant à lui référence aux ressources auxquelles l’utilisateur va pouvoir accéder, et les opérations qu’il va être en mesure d’effectuer.
+* L’Accounting (gestion des comptes) concerne les données et les informations se rapportant au profil de l’utilisateur.
 
 ## A (Authentification)
 
@@ -16,6 +15,14 @@ L’architecture AAA permet aux utilisateurs d’accéder aux périphériques en
 L’authentification désigne le fait de prouver qu’on est bien la personne que l’on prétend être.
 L’authentification vient en complément de l’identification. Pour s’authentifier, on ajoute une
 preuve à l’identification. Ce sont ces preuves qu’on appelle facteurs d’authentification.
+```
+
+### Les différents types d’authentification
+#### Authentification de type "password-only"
+L’administrateur a, à sa disposition, plusieurs types d’authentification disponibles. La première, et la plus simple, consiste en une authentification par mot de passe, également appelée Authentication "password-only". <br>
+Cette méthode oblige l’utilisateur à saisir un mot de passe lorsqu’il se connecte via une des "access line" comme les vty, ou le port console
+Pour l'implémenter: `enable password cisco`
+
 ```
 
 ## A (Autorisation)

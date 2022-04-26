@@ -122,6 +122,7 @@ des répertoires LDAP ou d'autres serveurs RADIUS.
 #### Serveur NAS (Network Access Server)
 
 ```
+Le NAS est un appareil qui fonctionne comme un point de contrôle d'accès pour les utilisateurs dans des emplacements distants se connectant au réseau interne d'une entreprise ou à un FAI. Également appelé « passerelle multimédia » ou « serveur d'accès à distance » (RAS), un serveur d'accès au réseau (NAS) peut inclure ses propres services d'authentification ou s'appuyer sur un serveur d'authentification distinct. Un NAS peut être un serveur dédié ou un service logiciel au sein d'un serveur standard. 
 ```
 
 ![radius](https://user-images.githubusercontent.com/83721477/165078509-7b656c0a-1402-4499-84f0-2ed21d5ec0cd.jpg)

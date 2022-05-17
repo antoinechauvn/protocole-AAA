@@ -162,7 +162,7 @@ De nombreuses questions à l’examen CCNA sont souvent fondées sur les particu
 ## CISCO ACS
 
 Le serveur de contrôle d'accès Cisco (ACS) est une plate-forme d'authentification, d'autorisation et de comptabilité (AAA) qui vous permet de gérer de manière centralisée l'accès aux ressources du réseau pour une variété de types d'accès, de périphériques et de groupes d'utilisateurs. Il est utilisé aux fins suivantes :
-* l'administration des dispositifs - elle authentifie les administrateurs, autorise les commandes et fournit des fonctions de comptabilité.
+* l'administration des dispositifs: elle authentifie les administrateurs, autorise les commandes et fournit des fonctions de comptabilité.
 * l'accès à distance - il peut fonctionner avec des dispositifs d'accès au réseau à distance pour faire respecter les politiques d'accès.
-* sans fil - authentifie et autorise les utilisateurs et les hôtes sans fil et applique les politiques sans fil.
-* contrôle d'admission au réseau - communique avec les serveurs de posture et d'audit pour appliquer les politiques de contrôle d'admission.
+* sans fil: authentifie et autorise les utilisateurs et les hôtes sans fil et applique les politiques sans fil.
+* contrôle d'admission au réseau: communique avec les serveurs de posture et d'audit pour appliquer les politiques de contrôle d'admission.
